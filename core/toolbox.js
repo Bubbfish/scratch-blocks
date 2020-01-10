@@ -699,7 +699,236 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
     'scratchCategoryId-' + this.id_,
   ];
   if (selected) {
+    var pathToMedia = this.parent_.parent_.workspace_.options.pathToMedia;
     classNames.push('categorySelected');
+    var childrenList = this.parent_.categories_;
+    if(this.id_ == "motion"){
+      this.bubble_.childNodes[0].src = `${pathToMedia}motiona.png`;
+      
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motiona.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+
+    }
+    if(this.id_ == "looks"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looka.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "sound"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounda.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "events"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}eventa.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "control"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controla.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "sensing"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensinga.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "operators"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operatora.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+      }
+    }
+    if(this.id_ == "variables"){
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vara.png`;
+        }
+      }
+    }
   }
   return classNames.join(' ');
 };
@@ -719,11 +948,91 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
         {'class': 'scratchCategoryItemIcon'});
     this.bubble_.style.backgroundImage = 'url(' + this.iconURI_ + ')';
   } else {
+    // this.bubble_ = document.createElement('div');
+
+    
     this.bubble_ = goog.dom.createDom('div',
         {'class': 'scratchCategoryItemBubble'});
+    // this.bubble_ = goog.dom.createDom('div');
+    var pathToMedia = this.parent_.parent_.workspace_.options.pathToMedia;
+    if(this.id_ == "motion"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}motions.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #4C98FF";
+    }
+    if(this.id_ == "looks"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}looks.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #9966FF";
+    }
+    if(this.id_ == "sound"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}sounds.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #D65CD6";
+    }
+    if(this.id_ == "events"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}events.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #FFD500";
+    }
+    if(this.id_ == "control"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}controls.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #FFAB19";
+    }
+    if(this.id_ == "sensing"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}sensings.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #4CC0E6";
+    }
+    if(this.id_ == "operators"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}operators.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #41C04B";
+    }
+
+    if(this.id_ == "variables"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}vars.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #FF8C1A";
+    }
+    if(this.id_ == "myBlocks"){
+      var bigImg = document.createElement("img");
+      bigImg.src= `${pathToMedia}myblocks.png`;
+      bigImg.style.width = '20px';
+      bigImg.style.height = '20px';
+      this.bubble_.appendChild(bigImg);
+      this.item_.style.borderLeft = "5px solid #FF6680";
+    }
+
     this.bubble_.style.backgroundColor = this.colour_;
     this.bubble_.style.borderColor = this.secondaryColour_;
   }
+ 
   this.item_.appendChild(this.bubble_);
   this.item_.appendChild(this.label_);
   this.parentHtml_.appendChild(this.item_);

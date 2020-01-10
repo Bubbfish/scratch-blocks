@@ -491,7 +491,7 @@ Blockly.Css.CONTENT = [
   '.blocklyFlyout {',
     'position: absolute;',
     'z-index: 20;',
-    'left: 60px;',
+    'left: 40px;',
   '}',
   '.blocklyFlyoutButton {',
     'fill: none;',
@@ -752,6 +752,7 @@ Blockly.Css.CONTENT = [
   '.blocklyScrollbarHorizontal, .blocklyScrollbarVertical {',
     'position: absolute;',
     'outline: none;',
+    'left: 40px;',
   '}',
 
   '.blocklyScrollbarBackground {',
@@ -1283,9 +1284,10 @@ Blockly.Css.CONTENT = [
     'stroke-linecap: round;',
     'stroke-linejoin: round;',
   '}',
-
+//wurunpu
   '.scratchCategoryMenu {',
-    'width: 60px;',
+    // 'width: 60px;',
+    'width: 100px;',
     'background: $colour_toolbox;',
     'color: $colour_toolboxText;',
     'font-size: .7rem;',
@@ -1314,27 +1316,40 @@ Blockly.Css.CONTENT = [
 
   '.scratchCategoryMenuRow {',
   '}',
-
+//wurunpu 
   '.scratchCategoryMenuItem {',
     'padding: 0.375rem 0px;',
     'cursor: pointer;',
     'text-align: center;',
+    'display: flex;',
+    'width: 80px;',
+    'border-top-right-radius: 25px;',
+    'border-bottom-right-radius: 25px;',
+    'border-left: 5px solid #FFAB19;',
+    'justify-content: space-around;',
+    'align-items: center;',
+    'background: #FFFBE8;',
+    'margin: 10px 0 10px;',
   '}',
 
   '.scratchCategoryMenuHorizontal .scratchCategoryMenuItem {',
     'padding: 6px 5px;',
   '}',
-
+//wurunpu
   '.scratchCategoryMenuItem.categorySelected {',
-    'background: $colour_toolboxSelected;',
+    // 'background: $colour_toolboxSelected;',
+    'background: #39DFFF;',
+    'width: 100px;',
+    'color: #FFF;',
   '}',
-
+//wurunpu
   '.scratchCategoryItemBubble {',
-    'width: 1.25rem;',
-    'height: 1.25rem;',
-    'border: 1px solid;',
-    'border-radius: 100%;',
-    'margin: 0 auto 0.125rem;',
+    // 'width: 1.25rem;',
+    // 'height: 1.25rem;',
+    // 'border: 1px solid;',
+    // 'border-radius: 100%;',
+    'background-color: transparent !important;',
+    // 'margin: 0 auto 0.125rem;',
   '}',
 
   '.scratchCategoryItemIcon {',
