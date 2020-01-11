@@ -702,12 +702,26 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
     var pathToMedia = this.parent_.parent_.workspace_.options.pathToMedia;
     classNames.push('categorySelected');
     var childrenList = this.parent_.categories_;
+    this.item_.style.borderLeft = "transparent !important;";
+    let backList = document.getElementsByClassName("scratchCategoryMenuItem");
+
     if(this.id_ == "motion"){
       this.bubble_.childNodes[0].src = `${pathToMedia}motiona.png`;
-      
+
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-motion") != '-1') {
+          element.style.backgroundColor = "#4C98FF";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+        
+      }
+
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motiona.png`;
+          // document.getElementsByClassName("categorySelected")[0].style.backgroundColor = "#4C98FF";
         }
         if(childrenList[i].id_ == "looks") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
@@ -730,15 +744,28 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
 
     }
     if(this.id_ == "looks"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-looks") != '-1') {
+          element.style.backgroundColor = "#9966FF";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+        
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
         }
         if(childrenList[i].id_ == "looks") {
+          // document.getElementsByClassName("categorySelected")[0].style.backgroundColor = "00000F";
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looka.png`;
         }
         if(childrenList[i].id_ == "sound") {
@@ -759,9 +786,21 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "sound"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-sound") != '-1') {
+          element.style.backgroundColor = "#D65CD6";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+        
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -787,9 +826,21 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "events"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-events") != '-1') {
+          element.style.backgroundColor = "#FFD500";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+        
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -815,9 +866,21 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "control"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-control") != '-1') {
+          element.style.backgroundColor = "#FFAB19";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        } 
+      }
+
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -843,9 +906,20 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "sensing"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-sensing") != '-1') {
+          element.style.backgroundColor = "#4CC0E6";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -871,9 +945,20 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "operators"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-operators") != '-1') {
+          element.style.backgroundColor = "#41C04B";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -899,9 +984,20 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
       }
     }
     if(this.id_ == "variables"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-variables") != '-1') {
+          element.style.backgroundColor = "#FF8C1A";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+      }
       for(var i = 0;i<childrenList.length;i++){
         if(childrenList[i].id_ == "motion") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
@@ -927,6 +1023,49 @@ Blockly.Toolbox.Category.prototype.getMenuItemClassName_ = function(selected) {
         if(childrenList[i].id_ == "variables") {
           childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vara.png`;
         }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocks.png`;
+        }
+      }
+    }
+
+    if(this.id_ == "myBlocks"){
+      for (let index = 0; index < backList.length; index++) {
+        const element = backList[index];
+        if(element.getAttribute("class").indexOf("scratchCategoryId-myBlocks") != '-1') {
+          element.style.backgroundColor = "#FF6680";
+        }else{
+          element.style.backgroundColor = "#FFFBE8";
+        }
+      }
+      for(var i = 0;i<childrenList.length;i++){
+        if(childrenList[i].id_ == "motion") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}motions.png`;
+        }
+        if(childrenList[i].id_ == "looks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}looks.png`;
+        }
+        if(childrenList[i].id_ == "sound") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sounds.png`;
+        }
+        if(childrenList[i].id_ == "events") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}events.png`;
+        }
+        if(childrenList[i].id_ == "control") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}controls.png`;
+        }
+        if(childrenList[i].id_ == "sensing") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}sensings.png`;
+        }
+        if(childrenList[i].id_ == "operators") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}operators.png`;
+        }
+        if(childrenList[i].id_ == "variables") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}vars.png`;
+        }
+        if(childrenList[i].id_ == "myBlocks") {
+          childrenList[i].bubble_.childNodes[0].src = `${pathToMedia}myblocka.png`;
+        }
       }
     }
   }
@@ -943,6 +1082,7 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
   this.label_ = goog.dom.createDom('div',
       {'class': 'scratchCategoryMenuItemLabel'},
       Blockly.utils.replaceMessageReferences(this.name_));
+      // this.label_.style.fontSize = "16px;"
   if (this.iconURI_) {
     this.bubble_ = goog.dom.createDom('div',
         {'class': 'scratchCategoryItemIcon'});
