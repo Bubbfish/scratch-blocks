@@ -73,7 +73,7 @@ goog.inherits(Blockly.VerticalFlyout, Blockly.Flyout);
  * Does the flyout automatically close when a block is created?
  * @type {boolean}
  */
-Blockly.VerticalFlyout.prototype.autoClose = false;
+Blockly.VerticalFlyout.prototype.autoClose = true;
 
 /**
  * The width of the flyout, if not otherwise specified.
@@ -137,6 +137,7 @@ Blockly.VerticalFlyout.prototype.CHECKBOX_SPACE_X =
  *     new blocks.
  */
 Blockly.VerticalFlyout.prototype.init = function(targetWorkspace) {
+  targetWorkspace.scale = 0.75;
   Blockly.VerticalFlyout.superClass_.init.call(this, targetWorkspace);
   this.workspace_.scale = targetWorkspace.scale;
 };

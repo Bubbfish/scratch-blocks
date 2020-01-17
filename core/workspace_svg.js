@@ -205,6 +205,8 @@ Blockly.WorkspaceSvg.prototype.dragDeltaXY_ = null;
  * Current scale.
  * @type {number}
  */
+//wurunpu
+//原来是1 这个字段是放大workspace积木块的意思==
 Blockly.WorkspaceSvg.prototype.scale = 1;
 
 /**
