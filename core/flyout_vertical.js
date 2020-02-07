@@ -137,7 +137,7 @@ Blockly.VerticalFlyout.prototype.CHECKBOX_SPACE_X =
  *     new blocks.
  */
 Blockly.VerticalFlyout.prototype.init = function(targetWorkspace) {
-  targetWorkspace.scale = 0.75;
+  targetWorkspace.scale = 0.95;
   Blockly.VerticalFlyout.superClass_.init.call(this, targetWorkspace);
   this.workspace_.scale = targetWorkspace.scale;
 };
@@ -238,10 +238,11 @@ Blockly.VerticalFlyout.prototype.getContentBoundingBox_ = function() {
  * @private
  */
 Blockly.VerticalFlyout.prototype.getMetrics_ = function() {
-  if (!this.isVisible()) {
-    // Flyout is hidden.
-    return null;
-  }
+
+  // if (!this.isVisible()) {
+  //   // Flyout is hidden.
+  //   return null;
+  // }
 
   var optionBox = this.getContentBoundingBox_();
 
@@ -404,6 +405,7 @@ Blockly.VerticalFlyout.prototype.scrollToStart = function() {
  * @param {number} pos The targeted scroll position in workspace coordinates.
  * @package
  */
+//wurunpu
 Blockly.VerticalFlyout.prototype.scrollTo = function(pos) {
   this.scrollTarget = pos * this.workspace_.scale;
 
