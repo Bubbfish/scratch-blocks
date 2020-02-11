@@ -112,6 +112,10 @@ Blockly.Toolbox.prototype.init = function() {
    */
   this.HtmlDiv =
       goog.dom.createDom(goog.dom.TagName.DIV, 'blocklyToolboxDiv');
+  var div = document.createElement("div");
+  div.className = "blocklyTrashIcon"
+  this.HtmlDiv.appendChild(div);
+  // this.HtmlDiv.parentNode.insertBefore(div,this.HtmlDiv);
   this.HtmlDiv.setAttribute('dir', workspace.RTL ? 'RTL' : 'LTR');
   svg.parentNode.insertBefore(this.HtmlDiv, svg);
 
@@ -129,12 +133,23 @@ Blockly.Toolbox.prototype.init = function() {
         }
         Blockly.Touch.clearTouchIdentifier();  // Don't block future drags.
       }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
-
     Blockly.bindEventWithChecks_(this.workspace_.svgBackground_, 'click', this,
     function(e) {
       if(this.flyout_.isVisible_){
         this.flyout_.hide()
       }
+    }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
+
+    Blockly.bindEventWithChecks_(this.HtmlDiv, 'mouseenter', this,
+    function(e) {
+      var pathToMedia = this.workspace_.options.pathToMedia;
+      this.HtmlDiv.firstChild.style.backgroundImage=`url(${pathToMedia}deleteopen.png)`;
+    }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
+
+    Blockly.bindEventWithChecks_(this.HtmlDiv, 'mouseout', this,
+    function(e) {
+      var pathToMedia = this.workspace_.options.pathToMedia;
+      this.HtmlDiv.firstChild.style.backgroundImage=`url(${pathToMedia}deleteclose.png)`;
     }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
 
   this.createFlyout_();

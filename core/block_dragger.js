@@ -180,7 +180,11 @@ Blockly.BlockDragger.prototype.startBlockDrag = function(currentDragDeltaXY) {
   this.draggingBlock_.moveToDragSurface_();
 
   var toolbox = this.workspace_.getToolbox();
+
   if (toolbox) {
+    if(this.draggingBlock_.isDeletable()) {
+      toolbox.HtmlDiv.firstChild.style.display = "block";
+    }
     var style = this.draggingBlock_.isDeletable() ? 'blocklyToolboxDelete' :
         'blocklyToolboxGrab';
     toolbox.addStyle(style);
@@ -256,6 +260,9 @@ Blockly.BlockDragger.prototype.endBlockDrag = function(e, currentDragDeltaXY) {
   if (toolbox) {
     var style = this.draggingBlock_.isDeletable() ? 'blocklyToolboxDelete' :
         'blocklyToolboxGrab';
+      if(this.draggingBlock_.isDeletable()) {
+        toolbox.HtmlDiv.firstChild.style.display = "none";
+      }
     toolbox.removeStyle(style);
   }
   Blockly.Events.setGroup(false);

@@ -859,7 +859,19 @@ Blockly.Css.CONTENT = [
     'z-index: 40;', /* so blocks go over toolbox when dragging */
     '-webkit-tap-highlight-color: transparent;', /* issue #1345 */
   '}',
-
+  '.blocklyTrashIcon {',
+    'height: 100%;',
+    'width: 121px;',
+    'background-color: #000000;',
+    'background-image: url(<<<PATH>>>/deleteclose.png);',
+    'background-repeat: no-repeat;',
+    'background-position: center center;',
+    'background-size: 34px 57px;',
+    'position: absolute;',
+    'z-index: 41;',
+    'opacity: 0.65;',
+   ' display: none;',
+  '}',
   '.blocklyTreeRoot {',
     'padding: 4px 0;',
   '}',
