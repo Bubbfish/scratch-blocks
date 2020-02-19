@@ -866,7 +866,7 @@ Blockly.Css.CONTENT = [
     'background-image: url(<<<PATH>>>/deleteclose.png);',
     'background-repeat: no-repeat;',
     'background-position: center center;',
-    'background-size: 34px 57px;',
+    'background-size: 60px 66px;',
     'position: absolute;',
     'z-index: 41;',
     'opacity: 0.65;',
