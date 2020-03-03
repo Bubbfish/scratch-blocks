@@ -133,7 +133,7 @@ Blockly.Toolbox.prototype.init = function() {
         }
         Blockly.Touch.clearTouchIdentifier();  // Don't block future drags.
       }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
-    Blockly.bindEventWithChecks_(this.workspace_.svgBackground_, 'click', this,
+    Blockly.bindEventWithChecks_(this.workspace_.svgBackground_, 'mousedown', this,
     function(e) {
       if(this.flyout_.isVisible_){
         this.flyout_.hide()
