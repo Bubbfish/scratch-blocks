@@ -209,12 +209,14 @@ Blockly.utils.getInjectionDivXY_ = function(element) {
     var scale = Blockly.utils.getScale_(element);
     x = (x * scale) + xy.x;
     y = (y * scale) + xy.y;
+    // y = 0;
     var classes = element.getAttribute('class') || '';
     if ((' ' + classes + ' ').indexOf(' injectionDiv ') != -1) {
       break;
     }
     element = element.parentNode;
   }
+  // y = 0;
   return new goog.math.Coordinate(x, y);
 };
 

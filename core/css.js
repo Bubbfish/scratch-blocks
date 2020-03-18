@@ -491,7 +491,7 @@ Blockly.Css.CONTENT = [
   '.blocklyFlyout {',
     'position: absolute;',
     'z-index: 20;',
-    'left: 60px;',
+    // 'left: 60px;',
   '}',
   '.blocklyFlyoutButton {',
     'fill: none;',
@@ -752,7 +752,7 @@ Blockly.Css.CONTENT = [
   '.blocklyScrollbarHorizontal, .blocklyScrollbarVertical {',
     'position: absolute;',
     'outline: none;',
-    'left: 60px;',
+    // 'left: 60px;',
   '}',
 
   '.blocklyScrollbarBackground {',

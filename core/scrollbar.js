@@ -84,7 +84,7 @@ Blockly.ScrollbarPair.prototype.dispose = function() {
  * Recalculate both of the scrollbars' locations and lengths.
  * Also reposition the corner rectangle.
  */
-Blockly.ScrollbarPair.prototype.resize = function() {
+Blockly.ScrollbarPair.prototype.resize = function(first) {
   // Look up the host metrics once, and use for both scrollbars.
   var hostMetrics = this.workspace_.getMetrics();
   if (!hostMetrics) {
@@ -119,11 +119,15 @@ Blockly.ScrollbarPair.prototype.resize = function() {
     }
   }
   if (resizeH) {
-    this.hScroll.resize(hostMetrics);
+    this.hScroll.resize(hostMetrics, first);
   }
   if (resizeV) {
     this.vScroll.resize(hostMetrics);
   }
+  if(first){
+    this.vScroll.resize(hostMetrics, first);
+  }
+
 
   // Reposition the corner square.
   if (!this.oldHostMetrics_ ||
@@ -158,14 +162,12 @@ Blockly.ScrollbarPair.prototype.set = function(x, y) {
 
   var hHandlePosition = x * this.hScroll.ratio_;
   var vHandlePosition = y * this.vScroll.ratio_;
-
   var hBarLength = this.hScroll.scrollViewSize_;
   var vBarLength = this.vScroll.scrollViewSize_;
 
   xyRatio.x = this.getRatio_(hHandlePosition, hBarLength);
   xyRatio.y = this.getRatio_(vHandlePosition, vBarLength);
   this.workspace_.setMetrics(xyRatio);
-
   this.hScroll.setHandlePosition(hHandlePosition);
   this.vScroll.setHandlePosition(vHandlePosition);
 };
@@ -415,7 +417,7 @@ Blockly.Scrollbar.prototype.setPosition_ = function(x, y) {
  * required dimensions.  If not provided, it will be fetched from the host
  * object.
  */
-Blockly.Scrollbar.prototype.resize = function(opt_metrics) {
+Blockly.Scrollbar.prototype.resize = function(opt_metrics,first) {
   // Determine the location, height and width of the host element.
   var hostMetrics = opt_metrics;
   if (!hostMetrics) {
@@ -449,9 +451,9 @@ Blockly.Scrollbar.prototype.resize = function(opt_metrics) {
    * .absoluteLeft: Left-edge of view.
    */
   if (this.horizontal_) {
-    this.resizeHorizontal_(hostMetrics);
+    this.resizeHorizontal_(hostMetrics,first);
   } else {
-    this.resizeVertical_(hostMetrics);
+    this.resizeVertical_(hostMetrics,first);
   }
   // Resizing may have caused some scrolling.
   this.onScroll_();
@@ -463,10 +465,10 @@ Blockly.Scrollbar.prototype.resize = function(opt_metrics) {
  *     required dimensions, possibly fetched from the host object.
  * @private
  */
-Blockly.Scrollbar.prototype.resizeHorizontal_ = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeHorizontal_ = function(hostMetrics,first) {
   // TODO: Inspect metrics to determine if we can get away with just a content
   // resize.
-  this.resizeViewHorizontal(hostMetrics);
+  this.resizeViewHorizontal(hostMetrics,first);
 };
 
 /**
@@ -475,7 +477,7 @@ Blockly.Scrollbar.prototype.resizeHorizontal_ = function(hostMetrics) {
  * @param {!Object} hostMetrics A data structure describing all the
  *     required dimensions, possibly fetched from the host object.
  */
-Blockly.Scrollbar.prototype.resizeViewHorizontal = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeViewHorizontal = function(hostMetrics,first) {
   var viewSize = hostMetrics.viewWidth - 1;
   if (this.pair_) {
     // Shorten the scrollbar to make room for the corner square.
@@ -495,7 +497,7 @@ Blockly.Scrollbar.prototype.resizeViewHorizontal = function(hostMetrics) {
 
   // If the view has been resized, a content resize will also be necessary.  The
   // reverse is not true.
-  this.resizeContentHorizontal(hostMetrics);
+  this.resizeContentHorizontal(hostMetrics,first);
 };
 
 /**
@@ -504,7 +506,7 @@ Blockly.Scrollbar.prototype.resizeViewHorizontal = function(hostMetrics) {
  * @param {!Object} hostMetrics A data structure describing all the
  *     required dimensions, possibly fetched from the host object.
  */
-Blockly.Scrollbar.prototype.resizeContentHorizontal = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeContentHorizontal = function(hostMetrics,first) {
   if (!this.pair_) {
     // Only show the scrollbar if needed.
     // Ideally this would also apply to scrollbar pairs, but that's a bigger
@@ -523,7 +525,12 @@ Blockly.Scrollbar.prototype.resizeContentHorizontal = function(hostMetrics) {
 
   var handlePosition = (hostMetrics.viewLeft - hostMetrics.contentLeft) *
       this.ratio_;
-  this.setHandlePosition(this.constrainHandle_(handlePosition));
+      if(first){
+        this.setHandlePosition(0);
+      }else{
+        this.setHandlePosition(this.constrainHandle_(handlePosition));
+      }
+  
 };
 
 /**
@@ -532,10 +539,10 @@ Blockly.Scrollbar.prototype.resizeContentHorizontal = function(hostMetrics) {
  *     required dimensions, possibly fetched from the host object.
  * @private
  */
-Blockly.Scrollbar.prototype.resizeVertical_ = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeVertical_ = function(hostMetrics,first) {
   // TODO: Inspect metrics to determine if we can get away with just a content
   // resize.
-  this.resizeViewVertical(hostMetrics);
+  this.resizeViewVertical(hostMetrics,first);
 };
 
 /**
@@ -544,7 +551,7 @@ Blockly.Scrollbar.prototype.resizeVertical_ = function(hostMetrics) {
  * @param {!Object} hostMetrics A data structure describing all the
  *     required dimensions, possibly fetched from the host object.
  */
-Blockly.Scrollbar.prototype.resizeViewVertical = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeViewVertical = function(hostMetrics,first) {
   var viewSize = hostMetrics.viewHeight - 1;
   if (this.pair_) {
     // Shorten the scrollbar to make room for the corner square.
@@ -562,7 +569,7 @@ Blockly.Scrollbar.prototype.resizeViewVertical = function(hostMetrics) {
 
   // If the view has been resized, a content resize will also be necessary.  The
   // reverse is not true.
-  this.resizeContentVertical(hostMetrics);
+  this.resizeContentVertical(hostMetrics,first);
 };
 
 /**
@@ -571,7 +578,7 @@ Blockly.Scrollbar.prototype.resizeViewVertical = function(hostMetrics) {
  * @param {!Object} hostMetrics A data structure describing all the
  *     required dimensions, possibly fetched from the host object.
  */
-Blockly.Scrollbar.prototype.resizeContentVertical = function(hostMetrics) {
+Blockly.Scrollbar.prototype.resizeContentVertical = function(hostMetrics,first) {
   if (!this.pair_) {
     // Only show the scrollbar if needed.
     this.setVisible(this.scrollViewSize_ < hostMetrics.contentHeight);
@@ -588,7 +595,12 @@ Blockly.Scrollbar.prototype.resizeContentVertical = function(hostMetrics) {
 
   var handlePosition = (hostMetrics.viewTop - hostMetrics.contentTop) *
       this.ratio_;
-  this.setHandlePosition(this.constrainHandle_(handlePosition));
+      if(first){
+        this.setHandlePosition(0);
+      }else{
+        this.setHandlePosition(this.constrainHandle_(handlePosition));
+      }
+  // this.setHandlePosition(this.constrainHandle_(handlePosition));
 };
 
 /**

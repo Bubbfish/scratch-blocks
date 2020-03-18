@@ -700,7 +700,7 @@ Blockly.WorkspaceSvg.prototype.resize = function() {
     this.zoomControls_.position();
   }
   if (this.scrollbar) {
-    this.scrollbar.resize();
+    this.scrollbar.resize("first");
   }
   this.updateScreenCalculations_();
 };

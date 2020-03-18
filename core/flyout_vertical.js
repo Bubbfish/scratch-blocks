@@ -332,10 +332,12 @@ Blockly.VerticalFlyout.prototype.position = function() {
     var categoryWidth = toolboxWidth - this.width_;
     var x = this.toolboxPosition_ == Blockly.TOOLBOX_AT_RIGHT ?
         targetWorkspaceMetrics.viewWidth : categoryWidth;
+        x =x+60;
     var y = 0;
   } else {
     var x = this.toolboxPosition_ == Blockly.TOOLBOX_AT_RIGHT ?
         targetWorkspaceMetrics.viewWidth - this.width_ : 0;
+        x=x+60;
     var y = 0;
   }
 
