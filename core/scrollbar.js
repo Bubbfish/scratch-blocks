@@ -526,7 +526,7 @@ Blockly.Scrollbar.prototype.resizeContentHorizontal = function(hostMetrics,first
   var handlePosition = (hostMetrics.viewLeft - hostMetrics.contentLeft) *
       this.ratio_;
       if(first){
-        this.setHandlePosition(0);
+        this.setHandlePosition(100);
       }else{
         this.setHandlePosition(this.constrainHandle_(handlePosition));
       }
@@ -739,7 +739,7 @@ Blockly.Scrollbar.prototype.onMouseDownBar_ = function(e) {
   // animation in anticipation of a workspace move.
   Blockly.WidgetDiv.hide(true);
   Blockly.DropDownDiv.hideWithoutAnimation();
-
+  
   this.setHandlePosition(this.constrainHandle_(handlePosition));
   this.onScroll_();
   e.stopPropagation();
