@@ -1343,7 +1343,7 @@ Blockly.Css.CONTENT = [
     'align-items: center;',
     'background: #FFFBE8;',
     'margin: 0 0 6px;',
-    'font-size: 16px;',
+    // 'font-size: 16px;',
   '}',
   '.scratchCategoryMenuItemLabel {',
     'font-size: 16px !important;',
