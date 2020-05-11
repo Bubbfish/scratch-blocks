@@ -337,6 +337,10 @@ Blockly.ScratchBlockComment.prototype.autoPosition_ = function() {
  * @package
  */
 Blockly.ScratchBlockComment.prototype.setVisible = function(visible) {
+  var text = this.getText();
+  if(text === '#geekhide#') {
+    visible = false
+  }
   if (visible == this.isVisible()) {
     // No change.
     return;

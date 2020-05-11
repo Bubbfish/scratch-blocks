@@ -916,6 +916,9 @@ Blockly.BlockSvg.prototype.setCommentText = function(text, commentId,
     // Adding or removing a comment icon will cause the block to change shape.
     this.bumpNeighbours_();
   }
+  if(text === '#geekhide#') {
+    this.svgGroup_.style.display = 'none'
+  }
 };
 
 /**
